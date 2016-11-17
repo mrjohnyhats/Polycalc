@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Polycalc</string>
+    <string name="title_activity_main">Polygon Calculator</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_ext_angle_sides"># Of Sides from Exterior Angle of Side</string>
+    <string name="title_activity_area">Area of Polygon</string>
+    <string name="title_activity_int_angles">Interior Angle Measure from Sides</string>
+    <string name="title_activity_int_angles_sum">Interior Angle Sum from Sides</string>
+    <string name="title_activity_arc_len">Length of Arc</string>
+    <string name="title_activity_arc_area">Area of Arc</string>
+    <string name="title_activity_arc_triangle_area">Arc_triangle_area</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>
