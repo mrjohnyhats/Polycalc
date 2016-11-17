@@ -9,7 +9,7 @@
     <string name="title_activity_int_angles_sum">Interior Angle Sum from Sides</string>
     <string name="title_activity_arc_len">Length of Arc</string>
     <string name="title_activity_arc_area">Area of Arc</string>
-    <string name="title_activity_arc_triangle_area">Arc_triangle_area</string>
+    <string name="title_activity_arc_triangle_area">Area of Arc Triangle</string>
 
     <string name="hello_world">Hello world!</string>
 </resources>
