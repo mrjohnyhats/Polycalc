@@ -7,43 +7,6 @@
     tools:context="jinnyco.polygon_measurer.MainActivity"
     android:id="@+id/layout">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="sides from ext angle"
-        android:id="@+id/ext_angle_sides_button"
-        android:layout_marginTop="34dp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:width="175dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="total area"
-        android:id="@+id/area_button"
-        android:layout_below="@+id/ext_angle_sides_button"
-        android:layout_centerHorizontal="true"
-        android:width="175dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="interior angles"
-        android:id="@+id/int_angles_button"
-        android:layout_below="@+id/area_button"
-        android:layout_centerHorizontal="true"
-        android:width="175dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="interior angles sum"
-        android:id="@+id/int_angles_sum_button"
-        android:layout_below="@+id/int_angles_button"
-        android:layout_centerHorizontal="true"
-        android:width="175dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,34 +14,27 @@
         android:text="Jin&apos;s wonderful polygon calculator"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:columnWidth="150dp"
+        android:stretchMode="spacingWidthUniform"
+        tools:gravity="center"
+        android:id="@+id/optsg"
+        android:numColumns="auto_fit"
+        android:layout_alignParentBottom="false"
         android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/area_button" />
-
-    <Button
-        android:layout_width="wrap_content"
+        android:layout_below="@+id/textView"
+        android:gravity="center"
+        android:layout_alignParentRight="false"
+        android:layout_centerHorizontal="false"
+        android:layout_centerInParent="false"
         android:layout_height="wrap_content"
-        android:text="arc length"
-        android:id="@+id/arc_len_button"
-        android:layout_below="@+id/int_angles_sum_button"
-        android:layout_alignEnd="@+id/int_angles_sum_button"
-        android:layout_alignStart="@+id/int_angles_sum_button" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="arc area"
-        android:id="@+id/arc_area_button"
-        android:layout_below="@+id/arc_len_button"
-        android:layout_alignStart="@+id/arc_len_button"
-        android:layout_alignEnd="@+id/arc_len_button" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="arc triangle area"
-        android:id="@+id/arc_t_area_button"
-        android:layout_below="@+id/arc_area_button"
-        android:layout_alignEnd="@+id/arc_area_button"
-        android:layout_alignStart="@+id/arc_area_button" />
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:horizontalSpacing="0dp"
+        android:verticalSpacing="10dp"
+        android:layout_centerVertical="false" />
 
 </RelativeLayout>

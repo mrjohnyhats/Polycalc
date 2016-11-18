@@ -3,21 +3,27 @@ package jinnyco.polygon_measurer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends Activity {
-
-    Button ext_angle_sides_button;
-    Button area_button;
-    Button int_angles_button;
-    Button int_angles_sum_button;
-    Button arc_len_button;
-    Button arc_area_button;
-    Button arc_t_area_button;
+    GridView optsg;
+    HashMap<String, Intent> functs = new HashMap<String, Intent>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,62 +31,22 @@ public class MainActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
-        ext_angle_sides_button = (Button) findViewById(R.id.ext_angle_sides_button);
-        area_button = (Button) findViewById(R.id.area_button);
-        int_angles_button = (Button) findViewById(R.id.int_angles_button);
-        int_angles_sum_button = (Button) findViewById(R.id.int_angles_sum_button);
-        arc_len_button = (Button) findViewById(R.id.arc_len_button);
-        arc_area_button = (Button) findViewById(R.id.arc_area_button);
-        arc_t_area_button = (Button) findViewById(R.id.arc_t_area_button);
+        functs.put("ext angle to sides", new Intent(this, Ext_angle_sides.class));
+        functs.put("polygon area", new Intent(this, Area.class));
+        functs.put("interior angle", new Intent(this, Int_angles.class));
+        functs.put("interior angle sum", new Intent(this, Int_angles_sum.class));
+        functs.put("arc length", new Intent(this, Arc_len.class));
+        functs.put("arc area", new Intent(this, Arc_area.class));
+        functs.put("arc triangle area", new Intent(this, Arc_triangle_area.class));
 
-        final Intent ext_angle_click = new Intent(MainActivity.this, Ext_angle_sides.class);
-        final Intent area_click = new Intent(MainActivity.this, Area.class);
-        final Intent int_angles_click = new Intent(MainActivity.this, Int_angles.class);
-        final Intent int_angles_sum_click = new Intent(MainActivity.this, Int_angles_sum.class);
-        final Intent arc_len_click = new Intent(MainActivity.this, Arc_len.class);
-        final Intent arc_area_click = new Intent(MainActivity.this, Arc_area.class);
-        final Intent arc_t_area_click = new Intent(MainActivity.this, Arc_triangle_area.class);
+        String[] keys = Arrays.copyOf(functs.keySet().toArray(), 7, String[].class);
 
-        ext_angle_sides_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.startActivity(ext_angle_click);
-            }
-        });
-        area_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.startActivity(area_click);
-            }
-        });
-        int_angles_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.startActivity(int_angles_click);
-            }
-        });
-        int_angles_sum_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.startActivity(int_angles_sum_click);
-            }
-        });
-        arc_len_button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                MainActivity.this.startActivity(arc_len_click);
-            }
-        });
-        arc_area_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.startActivity(arc_area_click);
-            }
-        });
-        arc_t_area_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.this.startActivity(arc_t_area_click);
+        optsg = (GridView) findViewById(R.id.optsg);
+        optsg.setAdapter(new ArrayAdapter<String>(this, R.layout.menu_item, keys));
+
+        optsg.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                MainActivity.this.startActivity(functs.get(((TextView) v).getText().toString()));
             }
         });
     }
