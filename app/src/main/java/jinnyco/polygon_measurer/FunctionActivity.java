@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
+
 import android.view.Gravity;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -77,8 +77,6 @@ public class FunctionActivity extends Activity {
             header.setLayoutParams(headerparams);
             header.setTextSize(16);
             header.setText(input_heads[i]);
-            Log.e("mylog", "i = " + i);
-            Log.e("mylog", "input_heads[i] = " + input_heads[i]);
 
             dl.addView(header);
 
