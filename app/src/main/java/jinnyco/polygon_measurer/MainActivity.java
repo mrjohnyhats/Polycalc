@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
 
         functs.put("ext angle to sides", new Intent(this, Ext_angle_sides.class));
         functs.put("polygon area", new Intent(this, Area.class));
-        functs.put("interior angle", new Intent(this, Int_angles.class));
+        functs.put("interior angle", new Intent(this, Int_angles_old.class));
         functs.put("interior angle sum", new Intent(this, Int_angles_sum.class));
         functs.put("arc length", new Intent(this, Arc_len.class));
         functs.put("arc area", new Intent(this, Arc_area.class));

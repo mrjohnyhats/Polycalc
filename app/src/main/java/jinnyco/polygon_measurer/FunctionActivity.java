@@ -3,6 +3,7 @@ package jinnyco.polygon_measurer;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
 
@@ -10,15 +11,44 @@ import android.view.Gravity;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class FunctionActivity extends Activity {
-    protected String[] input_heads, inputs;
+    protected String[] input_heads;
+    protected double[] inputs;
     protected EditText[] input_views;
     protected boolean has_pi_output = false;
-    protected TextWatcher watcher;
     protected RelativeLayout dl;
     protected TextView output;
     protected TextView pi_output;
+    protected TextWatcher watcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            for(int i = 0; i < input_views.length; i++){
+                try {
+                    inputs[i] = Double.parseDouble(input_views[i].getText().toString());
+                } catch(NumberFormatException e){
+                    Toast.makeText(FunctionActivity.this, "please input a number into the \"" + input_heads[i] + "\" input", Toast.LENGTH_SHORT);
+                }
+            }
+        }
+    };
+
+
+    protected static void doFunction(){
+        return;
+    }
+
 
     private TextView makeoutput(int i){
         TextView o = new TextView(FunctionActivity.this);
