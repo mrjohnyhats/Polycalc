@@ -34,21 +34,38 @@ public class FunctionActivity extends Activity {
 
         @Override
         public void afterTextChanged(Editable s) {
-            for(int i = 0; i < input_views.length; i++){
+            String str;
+            for (int i = 0; i < input_views.length; i++) {
                 try {
-                    inputs[i] = Double.parseDouble(input_views[i].getText().toString());
-                } catch(NumberFormatException e){
+                    str = input_views[i].getText().toString();
+                    if (str.length() > 0) {
+                        inputs[i] = Double.parseDouble(str);
+                    } else {
+                        zeroOutputs();
+                        return;
+                    }
+                } catch (NumberFormatException e) {
                     Toast.makeText(FunctionActivity.this, "please input a number into the \"" + input_heads[i] + "\" input", Toast.LENGTH_SHORT);
+                    zeroOutputs();
+                    return;
                 }
             }
+
+            doFunction();
         }
     };
 
 
-    protected static void doFunction(){
+    protected void doFunction(){
         return;
     }
 
+    protected void zeroOutputs(){
+        output.setText("0");
+        if(has_pi_output){
+            pi_output.setText("0π");
+        }
+    }
 
     private TextView makeoutput(int i){
         TextView o = new TextView(FunctionActivity.this);
@@ -76,7 +93,7 @@ public class FunctionActivity extends Activity {
         setContentView(R.layout.default_funct);
 
         input_views = new EditText[input_heads.length];
-        inputs = new String[input_heads.length];
+        inputs = new double[input_heads.length];
 
         dl = (RelativeLayout) findViewById(R.id.defaultlayout);
 
