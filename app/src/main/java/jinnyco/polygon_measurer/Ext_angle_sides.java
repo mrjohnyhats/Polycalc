@@ -1,17 +1,16 @@
 package jinnyco.polygon_measurer;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-
-/**
- * Created by jonbu on 11/20/2016.
- */
 
 public class Ext_angle_sides extends FunctionActivity {
     @Override
     protected void doFunction(){
-
+        double angle = inputs[0];
+        if(angle > 0){
+            output.setText(Double.toString(360.0/angle));
+        } else {
+            zeroOutputs();
+        }
     }
 
     @Override

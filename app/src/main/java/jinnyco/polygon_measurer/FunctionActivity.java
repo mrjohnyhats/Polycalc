@@ -71,6 +71,7 @@ public class FunctionActivity extends Activity {
         TextView o = new TextView(FunctionActivity.this);
         RelativeLayout.LayoutParams oparams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 
+
         if (input_views[input_views.length - 1] != null) {
             oparams.addRule(RelativeLayout.BELOW, input_views[input_views.length - 1].getId());
         }
@@ -122,7 +123,7 @@ public class FunctionActivity extends Activity {
                 headerparams.addRule(RelativeLayout.BELOW, input_views[i-1].getId());
             }
             header.setLayoutParams(headerparams);
-            header.setTextSize(16);
+            header.setTextSize(18);
             header.setText(input_heads[i]);
 
             dl.addView(header);
@@ -147,6 +148,9 @@ public class FunctionActivity extends Activity {
 
             if (has_pi_output) {
                 pi_output = makeoutput(1);
+                params = new RelativeLayout.LayoutParams(pi_output.getLayoutParams());
+                params.addRule(RelativeLayout.BELOW, output.getId());
+                pi_output.setLayoutParams(params);
                 pi_output.setText("0π");
                 dl.addView(pi_output);
             }
