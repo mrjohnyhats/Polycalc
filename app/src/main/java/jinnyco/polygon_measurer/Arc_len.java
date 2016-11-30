@@ -20,6 +20,7 @@ public class Arc_len extends FunctionActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         input_heads = new String[]{"angle measure", "radius"};
+        has_pi_output = true;
 
         super.onCreate(savedInstanceState);
     }
