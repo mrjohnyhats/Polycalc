@@ -30,8 +30,9 @@ public class MainActivity extends Activity {
         functs.put("arc length", new Intent(this, Arc_len.class));
         functs.put("arc area", new Intent(this, Arc_area.class));
         functs.put("arc triangle area", new Intent(this, Arc_triangle_area.class));
+        functs.put("hypotenuse", new Intent(this, Hypotenuse.class));
 
-        String[] keys = Arrays.copyOf(functs.keySet().toArray(), 7, String[].class);
+        String[] keys = Arrays.copyOf(functs.keySet().toArray(), functs.size(), String[].class);
 
         optsg = (GridView) findViewById(R.id.optsg);
         optsg.setAdapter(new ArrayAdapter<String>(this, R.layout.menu_item, keys));
