@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Polycalc.iml" filepath="$PROJECT_DIR$/Polycalc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Polygon_measurer.iml" filepath="$PROJECT_DIR$/Polygon_measurer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

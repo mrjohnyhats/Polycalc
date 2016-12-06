@@ -31,6 +31,9 @@ public class MainActivity extends Activity {
         functs.put("arc area", new Intent(this, Arc_area.class));
         functs.put("arc triangle area", new Intent(this, Arc_triangle_area.class));
         functs.put("hypotenuse", new Intent(this, Hypotenuse.class));
+        functs.put("tri-prism surface area", new Intent(this, Tri_prism_sa.class));
+        functs.put("rect-prism surface area", new Intent(this, Rect_prism_sa.class));
+        functs.put("reg polygon prism surface area", new Intent(this, Polyprism_sa.class));
 
         String[] keys = Arrays.copyOf(functs.keySet().toArray(), functs.size(), String[].class);
 
