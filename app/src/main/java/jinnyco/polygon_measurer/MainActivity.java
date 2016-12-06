@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 
         optsg.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                MainActivity.this.startActivity(functs.get(((TextView) v).getText().toString()));
+                MainActivity.this.startActivity(functs.get(((TextView)v).getText().toString()));
             }
         });
     }

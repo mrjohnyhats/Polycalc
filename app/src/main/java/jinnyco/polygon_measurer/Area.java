@@ -2,10 +2,6 @@ package jinnyco.polygon_measurer;
 
 import android.os.Bundle;
 
-/**
- * Created by jonbu on 11/19/2016.
- */
-
 public class Area extends FunctionActivity {
     @Override
     protected void doFunction(){
