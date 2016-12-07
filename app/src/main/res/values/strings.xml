@@ -10,6 +10,9 @@
     <string name="title_activity_arc_len">Length of Arc</string>
     <string name="title_activity_arc_area">Area of Arc</string>
     <string name="title_activity_arc_triangle_area">Area of Arc Triangle</string>
+    <string name="title_activity_tri_prism_sa">Surface Area of Triangular Prism</string>
+    <string name="title_activity_polyprism_sa">Surface Area of N-gon Prism</string>
+    <string name="title_activity_rect_prism_sa">Surface Area of Rectangular Prism</string>
 
     <string name="hello_world">Hello world!</string>
 </resources>

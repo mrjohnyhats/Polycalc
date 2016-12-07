@@ -58,6 +58,21 @@
             android:label="@string/title_activity_arc_triangle_area"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".Tri_prism_sa"
+            android:label="@string/title_activity_tri_prism_sa"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".Rect_prism_sa"
+            android:label="@string/title_activity_rect_prism_sa"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".Polyprism_sa"
+            android:label="@string/title_activity_polyprism_sa"
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>
